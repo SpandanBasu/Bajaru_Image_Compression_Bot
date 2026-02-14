@@ -1,5 +1,7 @@
 # Virtual environment
 venv/
+ENV/
+.env
 
 # Claude Code
 .claude/
@@ -7,6 +9,17 @@ venv/
 # Environment variables
 .env
 
-# Python
+# Python Bytecode
 __pycache__/
-*.pyc
+*.py[cod]
+
+# Image Data (Ignore the actual image files, keep the folder structure)
+raw/
+output/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+
+

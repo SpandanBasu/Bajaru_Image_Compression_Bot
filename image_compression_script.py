@@ -69,7 +69,7 @@ def process_details():
                 detail_img = img.resize((800, 800), Image.Resampling.LANCZOS)
                 
                 # 2. Save as optimized WebP
-                out_path = os.path.join(OUT_DETAIL_DIR, f"{product_name}.webp")
+                out_path = os.path.join(OUT_DETAIL_DIR, f"{product_name}_big.webp")
                 detail_img.save(out_path, "WEBP", quality=80)
             
             elapsed = time.time() - start_time
