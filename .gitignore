@@ -1,0 +1,12 @@
+# Virtual environment
+venv/
+
+# Claude Code
+.claude/
+
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
