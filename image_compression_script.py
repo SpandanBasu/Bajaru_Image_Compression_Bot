@@ -35,13 +35,13 @@ def process_thumbnails():
                 # 1. Resize to 200x200
                 thumb_img = img.resize((200, 200), Image.Resampling.LANCZOS)
                 
-                # 2. Save with the new naming format: productname_small.webp
+                # 2. Save with the new naming format: productname-thumbnail.webp
                 # Lossless WebP is great for maintaining the clarity of your generated assets
-                out_path = os.path.join(OUT_THUMB_DIR, f"{product_name}_small.webp")
+                out_path = os.path.join(OUT_THUMB_DIR, f"{product_name}-thumbnail.webp")
                 thumb_img.save(out_path, "WEBP", lossless=True)
             
             elapsed = time.time() - start_time
-            print(f"  ✅ {filename} -> {product_name}_small.webp ({elapsed:.2f}s)")
+            print(f"  ✅ {filename} -> {product_name}-thumbnail.webp ({elapsed:.2f}s)")
             
         except Exception as e:
             print(f"  ❌ Failed to process {filename}: {e}")
@@ -69,11 +69,11 @@ def process_details():
                 detail_img = img.resize((800, 800), Image.Resampling.LANCZOS)
                 
                 # 2. Save as optimized WebP
-                out_path = os.path.join(OUT_DETAIL_DIR, f"{product_name}_big.webp")
+                out_path = os.path.join(OUT_DETAIL_DIR, f"{product_name}-detail.webp")
                 detail_img.save(out_path, "WEBP", quality=80)
             
             elapsed = time.time() - start_time
-            print(f"  ✅ {filename} -> {product_name}_big.webp ({elapsed:.2f}s)")
+            print(f"  ✅ {filename} -> {product_name}-detail.webp ({elapsed:.2f}s)")
             
         except Exception as e:
             print(f"  ❌ Failed to process {filename}: {e}")
@@ -81,4 +81,4 @@ def process_details():
 if __name__ == "__main__":
     process_thumbnails()
     process_details()
-    print("\n🎉 All Bajaru assets processed! Thumbnails follow the '_thumb' naming format.")
+    print("\n🎉 All Bajaru assets processed! Thumbnails follow the '-thumbnail' naming format.")
